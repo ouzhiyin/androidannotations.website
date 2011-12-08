@@ -47,16 +47,6 @@ body { margin: 0; font-size: 13px; line-height: 1.231; background-image:url('../
 
 body, button, input, select, textarea { font-family: sans-serif; color: #222; }
 
-/* 
- * These selection declarations have to be separate
- * No text-shadow: twitter.com/miketaylr/status/12228805301
- * Also: hot pink!
- */
-
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
-
-
 /* =============================================================================
    Links
    ========================================================================== */
@@ -232,6 +222,11 @@ body{
 	width:960px;
 }
 
+.wrapper-content{
+	margin:auto;
+	width:1160px;
+}
+
 #header-container{
     position:absolute;
     top:0;
@@ -328,23 +323,22 @@ aside ul li a:hover {
     color:white;
 }
 
-#main p{
-	font:16px/26px Helvetica, Helvetica Neue, Arial;
-	width:620px;
-}
-
 article {
     position:relative;
     top:170px;
 }
 
-article header{
-	margin-bottom:50px;
-	padding-bottom:30px;
-	width:700px;
-	-webkit-box-shadow:0 45px 60px -60px #AAA;
-	   -moz-box-shadow:0 45px 60px -60px #AAA;
-	        box-shadow:0 45px 60px -60px #AAA;
+.column {
+    margin-right:25px;
+    float:left;
+    width:500px;
+}
+
+.syntaxhighlighter {
+    border:1px solid #CCCCCC;
+	-webkit-box-shadow:3px 3px 3px 0px #666;
+	   -moz-box-shadow:3px 3px 3px 0px #666;
+	        box-shadow:3px 3px 3px 0px #666;
 }
 
 #footer-container{
@@ -361,6 +355,7 @@ article header{
 }
 
 #footer-container footer{
+    color:white;
 }
 
 #footer-container footer p{
