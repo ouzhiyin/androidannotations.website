@@ -15,12 +15,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
 audio[controls], canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 
 @font-face {
-    font-family: 'ChunkFiveRegular';
-    src: url('../fonts/Chunkfive-webfont.eot');
-    src: url('../fonts/Chunkfive-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Chunkfive-webfont.woff') format('woff'),
-    url('../fonts/Chunkfive-webfont.ttf') format('truetype'),
-    url('../fonts/Chunkfive-webfont.svg#ChunkFiveRegular') format('svg');
+    font-family: 'EnigmaB_2-webfont';
+    src: url('../fonts/EnigmaB_2-webfont.eot');
+    src: url('../fonts/EnigmaB_2-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/EnigmaB_2-webfont.woff') format('woff'),
+    url('../fonts/EnigmaB_2-webfont.ttf') format('truetype'),
+    url('../fonts/EnigmaB_2-webfont.svg#EnigmaB_2-webfont') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -219,31 +219,35 @@ body{
 
 .wrapper{
 	margin:auto;
-	width:960px;
+	width:1410px;
 }
 
 .wrapper-content{
 	margin:auto;
-	width:1160px;
+	width:1460px;
+}
+
+#main {
+    overflow:hidden;
 }
 
 #header-container{
-    position:absolute;
+    position:fixed;
     top:0;
+    z-index:100;
     width:100%;
 	background-color:#A4C639;
-	height:130px;
+	height:150px;
 	border-bottom:20px solid #7EA112;
 	margin-bottom:50px;
 	-webkit-box-shadow:0 0px 2px 2px #444;
 	   -moz-box-shadow:0 0px 2px 2px #444;
-	        box-shadow:0 0px 2px 2px #444;
+		box-shadow:0 0px 2px 2px #444;
 }
 
-#header-container header div{
+header div{
     float:right;
-    height:111px;
-    background:red; 
+    height:134px;
     width:200px;
     background-color:#B5DB3B;
 }
@@ -254,33 +258,21 @@ h3{font-size: 30px;}
 #title, h2, h3{font-weight:normal;}
 
 #title{
-    font-family:"ChunkFiveRegular";
-	font-size: 70px;
+	position:relative;
+	bottom:85px;
+	font-family:"EnigmaB_2-webfont";
+	font-size: 115px;
 	color:white;
 	float:left;
 }
 
-header ul{
-    padding:0;
-	float:right;
-	margin-top:100px;
-}
-
-header ul li{
-    padding:0;
-	display:inline;
-}
-
-header ul li a{
-	padding:20px;
+#baseline {
+	position:relative;
+	top:103px;
+	right:325px;
+	font-family:"EnigmaB_2-webfont";
+	font-size:20px;
 	color:white;
-	text-decoration:none;
-	background-color:#88B00C;
-}
-
-header ul li a:hover{
-   color:white;
-   text-decoration:underline; 
 }
 
 aside{
@@ -301,37 +293,72 @@ aside ul {
 aside ul li {
 }
 
-aside ul li a {
-    margin:0;
-    text-align:center;
+.links {
+    position:fixed;
+    float:right;
+    list-style:none;
+    width:172px;
+	-webkit-box-shadow:3px 3px 3px 0px #666;
+	   -moz-box-shadow:3px 3px 3px 0px #666;
+	        box-shadow:3px 3px 3px 0px #666;
+}
+
+.links li a {
+    width:160px;
+    padding:20px;
+    float:right;
     text-decoration:none;
     display:block; 
-    padding:20px;
-    padding-left:25px;
-    padding-right:25px;
-    font-size:22px;
+    font-size:25px;
+    color:white;
+    background-color:#A1C922;
     -webkit-transition: background .3s ease, color 0.2s linear;
     -moz-transition: background .3s ease, color 0.2s linear;
     -o-transition: background .3s ease, color 0.2s linear;
     transition: background .3s ease, color 0.2s linear;
-    background-color:#A1C922;
-    color:white;
 }
 
-aside ul li a:hover {
-    background-color:#8BAD1D;
+.links li a:hover {
     color:white;
+    background-color:#8BAD1D;
+}
+
+#social-links {
+    right:0;
+    top:400px;
+}
+
+#social-links li a {
+    border-right:10px solid #78A300;
+}
+
+#project-links {
+    right:0;
+    top:180px;
+}
+
+#project-links li a {
+    border-right:10px solid #B9F200;
+}
+
+#project-links li a:hover {
 }
 
 article {
-    position:relative;
-    top:170px;
+    margin-top:170px;
 }
 
 .column {
     margin-right:25px;
     float:left;
-    width:500px;
+    width:700px;
+    text-align:center;
+}
+
+.column h3 {
+	font-family:"EnigmaB_2-webfont";
+	font-size:50px;
+
 }
 
 .syntaxhighlighter {
@@ -342,13 +369,14 @@ article {
 }
 
 #footer-container{
-    position:absolute;
-    bottom:0;
+	text-align:center;
+z-index:0;
+margin-top:50px;
+clear:both;
     width:100%;
 	background-color:#A4C639;
 	height:180px;
 	border-top:20px solid #7EA112;
-	margin-top:50px;
 	-webkit-box-shadow:0 0px 2px 2px #444;
 	   -moz-box-shadow:0 0px 2px 2px #444;
 	        box-shadow:0 0px 2px 2px #444;
@@ -364,6 +392,7 @@ article {
 }
 
 #footer-container footer p a{
+   color:white;
    text-decoration:none; 
    margin-left:5px;
 }
@@ -429,7 +458,7 @@ article {
    ========================================================================== */
  
 @media print {
-  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Bold prints faster: sanbeiji.com/archives/953 */
   a, a:visited { color: #444 !important; text-decoration: underline; }
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }

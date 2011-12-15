@@ -15,32 +15,33 @@
 
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/shCoreDefault.css">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
 	<script src="js/libs/modernizr-2.0.min.js"></script>
 	<script src="js/libs/shCore.js"></script>
 	<script src="js/libs/shBrushJava.js"></script>
-
 </head>
 <body>
 	<div id="header-container">
 		<header class="wrapper">
-			<h1 id="title">Android Annotations</h1>
-            <div></div>
-        </header>
+			<h1 id="title">AndroidAnnotations</h1>
+			<p id="baseline">Simple and powerful Android code!</p>
+			<ul class="links" id="project-links">
+				<li><a href="http://code.google.com/p/androidannotations/">Project Home</a></li>	
+				<li><a href="http://code.google.com/p/androidannotations/wiki/GettingStarted">Get Started!</a></li>	
+				<li><a href="http://code.google.com/p/androidannotations/issues/list">Bug Tracker</a></li>	
+			</ul>
+			<ul class="links" id="social-links">
+				<li><a href="http://plus.google.com/106206799999983258245">Google plus</a></li>	
+				<li><a href="http://twitter.com/AndAnnotations">Twitter</a></li>	
+			</ul>
+		</header>
 	</div>
 	<div id="main" class="wrapper-content">
-        <!--<aside>
-            <ul>
-                <li><a href="#">Google plus</a></li>
-                <li><a href="#">Google code</a></li>
-                <li><a href="#">Twitter</a></li>
-            </ul>
-        </aside>-->
 		<article>
-            <!--<iframe src="http://player.vimeo.com/video/20683891?title=0&amp;byline=0&amp;portrait=0" width="600" height="425" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>-->
             <div class="column">
                 <h3>Before</h3>
-                <script type="syntaxhighlighter" class="brush: java"><![CDATA[
+                <script type="syntaxhighlighter" class="brush: java; ruler:false; tab-size:2;smart-tabs:true;"><![CDATA[
 public class BookmarksToClipboardActivity extends Activity {
 	
 	BookmarkAdapter adapter;
@@ -68,7 +69,7 @@ public class BookmarksToClipboardActivity extends Activity {
 		search = (EditText) findViewById(R.id.search);
 		application = (BookmarkApplication) getApplication();
 		fadeIn = AnimationUtils.loadAnimation(this, anim.fade_in);
-		clipboardManager = ((ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE));
+		clipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
 
 		View updateBookmarksButton1 = findViewById(R.id.updateBookmarksButton1);
 		updateBookmarksButton1.setOnClickListener(new OnClickListener() {
@@ -91,8 +92,8 @@ public class BookmarksToClipboardActivity extends Activity {
 		bookmarkList.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				Bookmark selectedBookmark = (Bookmark) parent.getAdapter().getItem(position);
+			public void onItemClick(AdapterView<?> p, View v, int pos, long id) {
+				Bookmark selectedBookmark = (Bookmark) p.getAdapter().getItem(pos);
 				bookmarkListItemClicked(selectedBookmark);
 			}
 		});
@@ -115,7 +116,7 @@ public class BookmarksToClipboardActivity extends Activity {
 	"http://www.bookmarks.com/bookmarks/{userId}?search={search}";
 	
 	
-	private class UpdateBookmarksTask extends AsyncTask<String, Void, Bookmarks> {
+	class UpdateBookmarksTask extends AsyncTask<String, Void, Bookmarks> {
 
 		@Override
 		protected Bookmarks doInBackground(String... params) {
@@ -152,7 +153,7 @@ public class BookmarksToClipboardActivity extends Activity {
             </div>
             <div class="column">
                 <h3>After</h3>
-                <script type="syntaxhighlighter" class="brush: java"><![CDATA[
+                <script type="syntaxhighlighter" class="brush: java; ruler:false; tab-size:2;smart-tabs:true;"><![CDATA[
 @NoTitle
 @Fullscreen
 @EActivity(R.layout.bookmarks)
@@ -220,16 +221,10 @@ public interface BookmarkClient {
                 
                 
             </div>
-
-		</article>
 	</div>
 	<div id="footer-container">
 		<footer class="wrapper">
-			<p>Copyright 2012 &copy; Android Annotations - 
-            <a href="#">Google Plus</a>
-            <a href="#">Google code</a>
-            <a href="#">Twitter</a>
-            </p>
+			<p>Copyright 2012 &copy; AndroidAnnotations</p>
 		</footer>
 	</div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
